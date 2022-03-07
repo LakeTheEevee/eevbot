@@ -2,11 +2,11 @@
 
 require('colors');
 require('dotenv').config()
-
+const keepAlive = require('../server');
 const { readdirSync } = require('fs');
 const { Client, Collection } = require('discord.js');
 const discord = require('discord.js');
-const { token } = require('../config'); 
+const { token, replitOn } = require('../config'); 
 
 const client = new Client({
   // https://discordjs.guide/popular-topics/intents.html#gateway-intents
@@ -28,13 +28,17 @@ for (const file of eventFiles) {
 }
 
 process.on('SIGINT', () => {
-  console.log('Gracefully stopping bot...'.bold.red);
+  console.log('Stopping bot...'.bold.red);
   // end database connection
   client.destroy();
   process.exit(0);
 });
 
 client.login(token).then(() => {
+  if (replitOn === true) {
+    keepAlive();
+    console.log('Repl.it server is ready!'.bold.green);
+  }
   console.log('The bot has started'.bold.cyan);
 });
 
