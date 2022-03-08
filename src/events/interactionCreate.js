@@ -6,7 +6,7 @@ module.exports = {
     if (!interaction.isCommand()) return;
 
     try {
-      return client.interactions.get(interaction.commandName)?.execute(interaction);
+      return client.interactions.get(interaction.commandName)?.execute(interaction, client);
     } catch (err) {
       console.error(err);
     }
