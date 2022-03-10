@@ -6,7 +6,7 @@ module.exports = {
     description: 'Returns the ping of the bot.',
   },
   execute: (interaction, client) => {
-    return interaction.reply(`:ping_pong: Pong!\nAPI Ping: **\`${client.ws.ping} ms\`**`);
+    return interaction.reply(`:ping_pong: Pong! API Ping: **\`${client.ws.ping} ms\`**`);
     // interaction.createdTimestamp - interaction.createdTimestamp
   },
 };
