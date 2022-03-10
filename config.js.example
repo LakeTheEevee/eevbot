@@ -1,5 +1,6 @@
 require("dotenv").config()
 module.exports = {
   "token": process.env.TOKEN,
-  "replitOn": false
+  "replitOn": boolean on whether to use express to keep repl.it alive (with uptimerobot),
+  "guildId": your development guild ID,
 };
