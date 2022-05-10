@@ -1,3 +1,3 @@
 # eevbot
 a very cool discord bot
-lake likes men
+ralsei is gay
